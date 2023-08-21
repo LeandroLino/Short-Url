@@ -22,6 +22,9 @@ app.post('/short', async (req, res) => {
 
 app.post('/get-short', async (req, res) => {
 	const completeUrl = await db.getURLEntity(req.body.shortUrl);
+	if (!completeUrl) {
+		res.status(404).send();
+	}
 	res.status(202).send({ url: completeUrl.original_url });
 });
 
