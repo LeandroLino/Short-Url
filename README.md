@@ -12,3 +12,60 @@ CREATE TABLE URLs (
   owner INT
 );
 ```
+
+## Rotas
+
+Uma API de encurtamento de URLs.
+
+## POST /short/ - Encurtando uma URL:
+
+```
+{
+	"url": "https://google.com/"
+}
+```
+
+**RESPONSE STATUS -> HTTP 200**
+
+```
+{
+	"url": "C1f1Ky"
+}
+```
+
+## POST /get-short/ - Acessando uma URL encurtada:
+
+```
+{
+	"url": "C1f1Ky"
+}
+```
+
+**RESPONSE STATUS -> HTTP 200**
+
+```
+{
+	"url": "https://google.com/"
+}
+```
+
+## POST /get-info/ - Acessando informações de uma URL encurtada:
+
+```
+{
+	"url": "C1f1Ky"
+}
+```
+
+**RESPONSE STATUS -> HTTP 200**
+
+```
+{
+	"id": 1,
+	"original_url": "https://google.com/",
+	"short_code": "C1f1Ky",
+	"click_count": 1,
+	"created_at": "2023-08-21",
+	"owner": null
+}
+```

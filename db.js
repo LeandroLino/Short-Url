@@ -32,6 +32,13 @@ async function createURL({ url, short_code }) {
 	);
 }
 
+async function incrementClick(shortUrl, click_count) {
+	await db.execute('UPDATE URLs SET click_count = ? WHERE short_code = ?', [
+		click_count,
+		shortUrl,
+	]);
+}
+
 async function loginUser(documentNumber, password) {
 	const user = await getUser(documentNumber);
 	const isCorretPassword = await utils.matchPassword(password, user.password);
@@ -42,4 +49,5 @@ module.exports = {
 	connect,
 	createURL,
 	getURLEntity,
+	incrementClick,
 };
