@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 app.post('/short', async (req, res) => {
 	const shortUrl = utils.generateShortCode();
 	await db.createURL({ ...req.body, short_code: shortUrl });
-	res.status(202).send({ shortUrl });
+	res.status(202).send({ url: shortUrl });
 });
 
 app.post('/get-short', async (req, res) => {

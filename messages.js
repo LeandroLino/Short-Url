@@ -1,9 +1,5 @@
-const InvalidDocument = "Invalid CPF/CNPJ"
-const InvalidPassword = "Invalid password, need more than 8 chars."
-const successfullyRegister = "Successfully register"
+const InvalidDocument = '';
 
 module.exports = {
-    InvalidDocument,
-    InvalidPassword,
-    successfullyRegister
-}
+	InvalidDocument,
+};

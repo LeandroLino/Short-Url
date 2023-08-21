@@ -1,8 +1,5 @@
 {
-    "verbose": true,
-    "ignora": [
-        ".git",
-        "node_modules"
-    ],
-    "delay": 1000
+	"verbose": true,
+	"ignora": [".git", "node_modules"],
+	"delay": 1000
 }
